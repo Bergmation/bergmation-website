@@ -21,6 +21,17 @@
             }
         }
     </script>
+    <style>
+        /* 3D Flip Card CSS */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { 
+            backface-visibility: hidden; 
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    </style>
 </head>
 <body class="bg-darkBg text-gray-200 font-sans min-h-screen flex flex-col justify-between selection:bg-gold selection:text-black">
 
@@ -34,7 +45,8 @@
             </div>
             <div class="flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm font-semibold hidden md:flex">
                 <a href="#services" class="hover:text-gold transition">Services</a>
-                <a href="#audit" class="hover:text-gold transition">Free Audit</a>
+                <!-- Updated to direct mailto link -->
+                <a href="mailto:your@email.com?subject=Free%20Mobile%20Audit%20Request" class="hover:text-gold transition">Free Audit</a>
                 <a href="#downloads" class="hover:text-gold transition">Tools</a>
                 <a href="#news" class="hover:text-gold transition">Devlog</a>
             </div>
@@ -59,7 +71,8 @@
             We turn slow, outdated websites into lightning-fast, mobile-optimized engines. Stop losing local customers to bad design.
         </p>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="#audit" class="w-full sm:w-auto bg-gold text-black font-bold px-8 py-3 rounded-lg hover:bg-goldHover transition text-sm sm:text-base shadow-lg shadow-gold/20">
+            <!-- Updated to direct mailto link -->
+            <a href="mailto:your@email.com?subject=Free%20Mobile%20Audit%20Request" class="w-full sm:w-auto bg-gold text-black font-bold px-8 py-3 rounded-lg hover:bg-goldHover transition text-sm sm:text-base shadow-lg shadow-gold/20">
                 Request Free Mobile Audit
             </a>
             <a href="#services" class="w-full sm:w-auto bg-charcoal border border-gray-700 hover:border-gold/50 text-white font-bold px-8 py-3 rounded-lg transition text-sm sm:text-base">
@@ -111,7 +124,7 @@
             </div>
         </section>
 
-        <!-- CORE SERVICES GRID -->
+        <!-- INTERACTIVE 3D FLIP CARDS: CORE SERVICES GRID -->
         <section id="services" class="space-y-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <h2 class="text-2xl sm:text-4xl font-bold text-textGold mb-4">Core Solutions</h2>
@@ -119,42 +132,71 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-charcoal border border-gray-800 p-6 rounded-xl hover:border-gold/50 transition">
-                    <div class="text-3xl mb-4">📱</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Mobile-First Redesign</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">We rebuild outdated sites into responsive, app-like experiences that look incredible on every phone and tablet.</p>
+                <!-- Service 1: Mobile-First Redesign -->
+                <div class="flip-card perspective-1000 h-64 cursor-pointer group" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+                        <!-- FRONT -->
+                        <div class="flip-card-front absolute w-full h-full backface-hidden bg-charcoal border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center group-hover:border-gold/50 transition shadow-lg">
+                            <div class="text-5xl mb-4">📱</div>
+                            <h3 class="text-xl font-bold text-white text-center">Mobile-First<br/>Redesign</h3>
+                            <span class="text-gold text-[10px] font-bold tracking-widest uppercase mt-6 flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition">
+                                🔄 Click to Reveal
+                            </span>
+                        </div>
+                        <!-- BACK -->
+                        <div class="flip-card-back absolute w-full h-full backface-hidden rotate-y-180 bg-gray-900 border border-gold/40 rounded-xl p-6 flex flex-col shadow-lg shadow-gold/5">
+                            <h3 class="text-lg font-bold text-textGold mb-3 border-b border-gray-700 pb-2">The Delivery</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed flex-grow">We rebuild outdated sites into responsive, app-like experiences that look incredible on every phone and tablet.</p>
+                            <span class="text-gray-500 text-[10px] font-bold tracking-widest uppercase text-center mt-4">
+                                ↩️ Flip Back
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Service 2 -->
-                <div class="bg-charcoal border border-gray-800 p-6 rounded-xl hover:border-gold/50 transition">
-                    <div class="text-3xl mb-4">⚡</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Performance & Speed</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Customers bounce when pages load slowly. We overhaul your code to achieve sub-second load times.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-charcoal border border-gray-800 p-6 rounded-xl hover:border-gold/50 transition">
-                    <div class="text-3xl mb-4">🤖</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Custom Automation</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Stop wasting hours on manual tasks. We script custom software to automate data entry, scraping, and client outreach.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- FASTFIELD EMBEDDED AUDIT FORM -->
-        <section id="audit" class="bg-darkBg border border-gold/30 rounded-2xl p-6 sm:p-10 shadow-lg shadow-gold/5 max-w-3xl mx-auto">
-            <div class="text-center mb-6">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Request a Free Mobile Audit</h2>
-                <p class="text-gray-400 text-sm">Fill out your business details below. We'll run a diagnostic on your current site and follow up with your custom audit report.</p>
-            </div>
-            
-            <!-- FastField iFrame Container -->
-            <div class="w-full h-[600px] bg-charcoal border border-gray-700 rounded-xl overflow-hidden shadow-inner">
-                <iframe src="https://portal.fastfieldforms.com/WebApp/WebForm?formId=1240668" class="w-full h-full border-0" title="Free Mobile Audit Form"></iframe>
-            </div>
-            <div class="text-center mt-4">
-                <a href="https://portal.fastfieldforms.com/WebApp/WebForm?formId=1240668" target="_blank" class="text-xs text-gold hover:underline">
-                    Having trouble viewing? Open form in a new tab ↗
-                </a>
+                <!-- Service 2: Performance & Speed -->
+                <div class="flip-card perspective-1000 h-64 cursor-pointer group" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+                        <!-- FRONT -->
+                        <div class="flip-card-front absolute w-full h-full backface-hidden bg-charcoal border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center group-hover:border-gold/50 transition shadow-lg">
+                            <div class="text-5xl mb-4">⚡</div>
+                            <h3 class="text-xl font-bold text-white text-center">Performance<br/>& Speed</h3>
+                            <span class="text-gold text-[10px] font-bold tracking-widest uppercase mt-6 flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition">
+                                🔄 Click to Reveal
+                            </span>
+                        </div>
+                        <!-- BACK -->
+                        <div class="flip-card-back absolute w-full h-full backface-hidden rotate-y-180 bg-gray-900 border border-gold/40 rounded-xl p-6 flex flex-col shadow-lg shadow-gold/5">
+                            <h3 class="text-lg font-bold text-textGold mb-3 border-b border-gray-700 pb-2">The Delivery</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed flex-grow">Customers bounce when pages load slowly. We overhaul your code to achieve sub-second load times.</p>
+                            <span class="text-gray-500 text-[10px] font-bold tracking-widest uppercase text-center mt-4">
+                                ↩️ Flip Back
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Custom Automation -->
+                <div class="flip-card perspective-1000 h-64 cursor-pointer group" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+                        <!-- FRONT -->
+                        <div class="flip-card-front absolute w-full h-full backface-hidden bg-charcoal border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center group-hover:border-gold/50 transition shadow-lg">
+                            <div class="text-5xl mb-4">🤖</div>
+                            <h3 class="text-xl font-bold text-white text-center">Custom<br/>Automation</h3>
+                            <span class="text-gold text-[10px] font-bold tracking-widest uppercase mt-6 flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition">
+                                🔄 Click to Reveal
+                            </span>
+                        </div>
+                        <!-- BACK -->
+                        <div class="flip-card-back absolute w-full h-full backface-hidden rotate-y-180 bg-gray-900 border border-gold/40 rounded-xl p-6 flex flex-col shadow-lg shadow-gold/5">
+                            <h3 class="text-lg font-bold text-textGold mb-3 border-b border-gray-700 pb-2">The Delivery</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed flex-grow">Stop wasting hours on manual tasks. We script custom software to automate data entry, scraping, and client outreach.</p>
+                            <span class="text-gray-500 text-[10px] font-bold tracking-widest uppercase text-center mt-4">
+                                ↩️ Flip Back
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
