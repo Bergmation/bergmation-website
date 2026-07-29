@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bergmation | Deluxe Software Suite</title>
+    <title>Bergmation | Custom Software & Web Optimization</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -32,9 +32,13 @@
                 <span class="text-textGold font-extrabold text-base sm:text-xl tracking-wider">BERGMATION</span>
                 <span class="text-gold text-lg sm:text-xl">༻꧂</span>
             </div>
-            <div class="flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm font-semibold">
+            <div class="flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm font-semibold hidden md:flex">
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#audit" class="hover:text-gold transition">Free Audit</a>
                 <a href="#downloads" class="hover:text-gold transition">Tools</a>
                 <a href="#news" class="hover:text-gold transition">Devlog</a>
+            </div>
+            <div class="flex items-center space-x-3">
                 <!-- BUY ME A COFFEE BUTTON -->
                 <a href="https://buymeacoffee.com/bergmationr" target="_blank" class="bg-gold text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold hover:bg-goldHover transition shadow-md shadow-gold/10 text-xs sm:text-sm">
                     ☕ <span class="hidden sm:inline">Buy Me a </span>Coffee
@@ -43,31 +47,130 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="max-w-4xl mx-auto text-center px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-12">
-        <div class="inline-block bg-charcoal border border-gold/30 text-textGold text-[10px] sm:text-xs uppercase px-3 py-1 rounded-full font-bold tracking-widest mb-4">
-            Deluxe High-Speed Engines
+    <!-- NEW BUSINESS HERO SECTION -->
+    <header class="max-w-4xl mx-auto text-center px-4 sm:px-6 pt-16 pb-12">
+        <div class="inline-block bg-charcoal border border-gold/30 text-textGold text-[10px] sm:text-xs uppercase px-3 py-1 rounded-full font-bold tracking-widest mb-6">
+            Small Business Web & Automation Solutions
         </div>
-        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-            Lightweight Tools. <br/><span class="text-textGold">Maximum Speed.</span>
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+            If your website looks broken on a phone, <span class="text-textGold">you're losing sales.</span>
         </h1>
-        <p class="text-gray-400 max-w-xl mx-auto text-xs sm:text-base leading-relaxed">
-            Free, standalone Windows software built for performance, custom global hotkeys, and seamless user control.
+        <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed mb-8">
+            We turn slow, outdated websites into lightning-fast, mobile-optimized engines. Stop losing local customers to bad design.
         </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a href="#audit" class="w-full sm:w-auto bg-gold text-black font-bold px-8 py-3 rounded-lg hover:bg-goldHover transition text-sm sm:text-base shadow-lg shadow-gold/20">
+                Request Free Mobile Audit
+            </a>
+            <a href="#services" class="w-full sm:w-auto bg-charcoal border border-gray-700 hover:border-gold/50 text-white font-bold px-8 py-3 rounded-lg transition text-sm sm:text-base">
+                View Our Services
+            </a>
+        </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-20 mb-16 sm:mb-20">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-24 mb-16 sm:mb-24">
 
-        <!-- DOWNLOADS GALLERY SECTION -->
+        <!-- INTERACTIVE SHOWCASE WIDGET -->
+        <section class="bg-charcoal border border-gray-800 rounded-2xl p-6 sm:p-10 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent pointer-events-none"></div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4 relative z-10">See The Difference</h2>
+            <p class="text-gray-400 text-sm mb-8 max-w-lg mx-auto relative z-10">Toggle between the views below to see how a clunky desktop layout transforms into a smooth, thumb-friendly mobile experience.</p>
+            
+            <!-- Custom Toggle -->
+            <div class="flex justify-center mb-8 relative z-10">
+                <div class="bg-darkBg border border-gray-700 p-1 rounded-lg inline-flex">
+                    <button id="btn-desktop" onclick="setPreviewMode('desktop')" class="px-6 py-2 rounded-md text-sm font-bold bg-gray-800 text-white transition-all">💻 Desktop</button>
+                    <button id="btn-mobile" onclick="setPreviewMode('mobile')" class="px-6 py-2 rounded-md text-sm font-bold text-gray-400 hover:text-white transition-all">📱 Mobile</button>
+                </div>
+            </div>
+
+            <!-- The Live Preview Box -->
+            <div id="preview-container" class="mx-auto bg-darkBg border border-gray-700 rounded-xl overflow-hidden transition-all duration-500 ease-in-out w-full max-w-4xl h-80 relative z-10">
+                <!-- Desktop Layout Mock -->
+                <div id="preview-content" class="w-full h-full p-4 flex gap-4 transition-all duration-500">
+                    <!-- Nav/Sidebar -->
+                    <div id="preview-sidebar" class="bg-charcoal w-1/4 h-full rounded-lg border border-gray-800 flex flex-col gap-2 p-3 transition-all duration-500">
+                        <div class="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
+                        <div class="h-3 bg-gray-800 rounded w-full"></div>
+                        <div class="h-3 bg-gray-800 rounded w-5/6"></div>
+                        <div class="h-3 bg-gray-800 rounded w-full"></div>
+                    </div>
+                    <!-- Main Content -->
+                    <div id="preview-main" class="bg-charcoal w-3/4 h-full rounded-lg border border-gray-800 p-6 flex flex-col gap-4 transition-all duration-500">
+                        <div class="h-8 bg-gold/20 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-700 rounded w-full mt-2"></div>
+                        <div class="h-4 bg-gray-700 rounded w-5/6"></div>
+                        
+                        <div class="flex gap-4 mt-auto">
+                            <div class="h-24 bg-gray-800 rounded flex-1"></div>
+                            <div class="h-24 bg-gray-800 rounded flex-1"></div>
+                            <div class="h-24 bg-gray-800 rounded flex-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE SERVICES GRID -->
+        <section id="services" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-4xl font-bold text-textGold mb-4">Core Solutions</h2>
+                <p class="text-gray-400">We don't just build websites; we build scalable digital systems for small businesses.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-charcoal border border-gray-800 p-6 rounded-xl hover:border-gold/50 transition">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Mobile-First Redesign</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We rebuild outdated sites into responsive, app-like experiences that look incredible on every phone and tablet.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-charcoal border border-gray-800 p-6 rounded-xl hover:border-gold/50 transition">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Performance & Speed</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Customers bounce when pages load slowly. We overhaul your code to achieve sub-second load times.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-charcoal border border-gray-800 p-6 rounded-xl hover:border-gold/50 transition">
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Custom Automation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Stop wasting hours on manual tasks. We script custom software to automate data entry, scraping, and client outreach.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FASTFIELD EMBEDDED AUDIT FORM -->
+        <section id="audit" class="bg-darkBg border border-gold/30 rounded-2xl p-6 sm:p-10 shadow-lg shadow-gold/5 max-w-3xl mx-auto">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Request a Free Mobile Audit</h2>
+                <p class="text-gray-400 text-sm">Fill out your business details below. We'll run a diagnostic on your current site and follow up with your custom audit report.</p>
+            </div>
+            
+            <!-- FastField iFrame Container -->
+            <div class="w-full h-[600px] bg-charcoal border border-gray-700 rounded-xl overflow-hidden shadow-inner">
+                <iframe src="https://portal.fastfieldforms.com/WebApp/WebForm?formId=1240668" class="w-full h-full border-0" title="Free Mobile Audit Form"></iframe>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://portal.fastfieldforms.com/WebApp/WebForm?formId=1240668" target="_blank" class="text-xs text-gold hover:underline">
+                    Having trouble viewing? Open form in a new tab ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- DIVIDER -->
+        <hr class="border-gray-800">
+
+        <!-- DOWNLOADS GALLERY SECTION (Bonus) -->
         <section id="downloads" class="space-y-6">
-            <div class="border-b border-gray-800 pb-2">
+            <div class="border-b border-gray-800 pb-2 mb-8">
                 <h2 class="text-xl sm:text-2xl font-bold text-textGold flex items-center gap-2">
-                    ⚡ Desktop Applications
+                    🛠️ Bonus: Free Desktop Tools
                 </h2>
+                <p class="text-gray-400 text-sm mt-2">A showcase of our lightweight Windows automation engines. Free to download.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
-
                 <!-- TOOL CARD 1: AUTO CLICKER -->
                 <div class="bg-charcoal border border-gray-800 hover:border-gold/50 transition rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-lg">
                     <div>
@@ -115,7 +218,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -149,8 +251,47 @@
         </div>
     </footer>
 
-    <!-- DYNAMIC NEWS FEED SCRIPT -->
+    <!-- SCRIPTS -->
     <script>
+        // Interactive Showcase Logic
+        function setPreviewMode(mode) {
+            const container = document.getElementById('preview-container');
+            const content = document.getElementById('preview-content');
+            const sidebar = document.getElementById('preview-sidebar');
+            const main = document.getElementById('preview-main');
+            const btnDesktop = document.getElementById('btn-desktop');
+            const btnMobile = document.getElementById('btn-mobile');
+
+            if (mode === 'mobile') {
+                container.classList.remove('max-w-4xl');
+                container.classList.add('max-w-sm');
+                content.classList.remove('flex-row');
+                content.classList.add('flex-col');
+                sidebar.classList.remove('w-1/4', 'h-full');
+                sidebar.classList.add('w-full', 'h-auto');
+                main.classList.remove('w-3/4');
+                main.classList.add('w-full');
+                btnMobile.classList.replace('bg-transparent', 'bg-gray-800');
+                btnMobile.classList.replace('text-gray-400', 'text-white');
+                btnDesktop.classList.replace('bg-gray-800', 'bg-transparent');
+                btnDesktop.classList.replace('text-white', 'text-gray-400');
+            } else {
+                container.classList.remove('max-w-sm');
+                container.classList.add('max-w-4xl');
+                content.classList.remove('flex-col');
+                content.classList.add('flex-row');
+                sidebar.classList.remove('w-full', 'h-auto');
+                sidebar.classList.add('w-1/4', 'h-full');
+                main.classList.remove('w-full');
+                main.classList.add('w-3/4');
+                btnDesktop.classList.replace('bg-transparent', 'bg-gray-800');
+                btnDesktop.classList.replace('text-gray-400', 'text-white');
+                btnMobile.classList.replace('bg-gray-800', 'bg-transparent');
+                btnMobile.classList.replace('text-white', 'text-gray-400');
+            }
+        }
+
+        // Dynamic News Feed Loader
         fetch('./news.json')
             .then(res => res.json())
             .then(posts => {
