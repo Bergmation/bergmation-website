@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergmation | Deluxe Software Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFD700',
+                        goldHover: '#E6C200',
+                        textGold: '#FFE55C',
+                        darkBg: '#141414',
+                        charcoal: '#222222',
+                        matrixGreen: '#00FF66'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-gray-200 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="border-b border-gray-800 bg-charcoal/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-gold text-xl">꧁༺</span>
+                <span class="text-textGold font-bold text-xl tracking-wider">BERGMATION</span>
+                <span class="text-gold text-xl">༻꧂</span>
+            </div>
+            <div class="flex items-center space-x-6 text-sm font-semibold">
+                <a href="#downloads" class="hover:text-gold transition">Tools</a>
+                <a href="#news" class="hover:text-gold transition">Devlog</a>
+                <!-- BUY ME A COFFEE BUTTON -->
+                <a href="https://www.buymeacoffee.com" target="_blank" class="bg-gold text-black px-4 py-2 rounded-lg font-bold hover:bg-goldHover transition shadow-md shadow-gold/10">
+                    ☕ Buy Me a Coffee
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="max-w-4xl mx-auto text-center px-6 pt-16 pb-12">
+        <div class="inline-block bg-charcoal border border-gold/30 text-textGold text-xs uppercase px-3 py-1 rounded-full font-bold tracking-widest mb-4">
+            Deluxe High-Speed Engines
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
+            Lightweight Tools. <br/><span class="text-textGold">Maximum Speed.</span>
+        </h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
+            Free, standalone Windows software built for performance, custom global hotkeys, and seamless user control.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 space-y-20 mb-20">
+
+        <!-- DOWNLOADS GALLERY SECTION -->
+        <section id="downloads" class="space-y-6">
+            <div class="border-b border-gray-800 pb-2">
+                <h2 class="text-2xl font-bold text-textGold flex items-center gap-2">
+                    ⚡ Desktop Applications
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- TOOL CARD 1: AUTO CLICKER -->
+                <div class="bg-charcoal border border-gray-800 hover:border-gold/50 transition rounded-xl p-6 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Deluxe Auto Clicker</h3>
+                                <p class="text-xs text-gold">v1.0 • Windows Portable .EXE</p>
+                            </div>
+                            <span class="bg-darkBg text-matrixGreen border border-matrixGreen/30 text-[10px] px-2 py-1 rounded font-mono">READY</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Precision auto-clicking engine with customizable intervals down to milliseconds, custom keybinding, and Matrix activity terminal.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="downloads/autoclicker.zip" download class="flex-1 text-center bg-gold hover:bg-goldHover text-black font-bold py-2.5 rounded-lg text-sm transition">
+                            ⬇️ Download .ZIP
+                        </a>
+                        <a href="https://www.buymeacoffee.com" target="_blank" class="bg-darkBg hover:bg-gray-800 border border-gold/40 text-textGold px-3 py-2.5 rounded-lg text-sm font-semibold transition" title="Support Development">
+                            ☕
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TOOL CARD 2: CHAT SPAMMER -->
+                <div class="bg-charcoal border border-gray-800 hover:border-gold/50 transition rounded-xl p-6 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Deluxe Chat Spammer</h3>
+                                <p class="text-xs text-gold">v1.0 • Windows Portable .EXE</p>
+                            </div>
+                            <span class="bg-darkBg text-matrixGreen border border-matrixGreen/30 text-[10px] px-2 py-1 rounded font-mono">READY</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">
+                            High-speed automated chat transmitter. Supports full message repeating, line-by-line mode, auto-enter toggles, and global hotkeys.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="downloads/chat_spammer.zip" download class="flex-1 text-center bg-gold hover:bg-goldHover text-black font-bold py-2.5 rounded-lg text-sm transition">
+                            ⬇️ Download .ZIP
+                        </a>
+                        <a href="https://www.buymeacoffee.com" target="_blank" class="bg-darkBg hover:bg-gray-800 border border-gold/40 text-textGold px-3 py-2.5 rounded-lg text-sm font-semibold transition" title="Support Development">
+                            ☕
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DEVLOG / NEWS SECTION -->
+        <section id="news" class="space-y-6">
+            <div class="border-b border-gray-800 pb-2">
+                <h2 class="text-2xl font-bold text-textGold flex items-center gap-2">
+                    📰 Development Log & News
+                </h2>
+            </div>
+            
+            <div id="news-feed" class="space-y-4">
+                <!-- Dynamic Posts Loaded via JS from news.json -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER TIP JAR BANNER -->
+    <footer class="border-t border-gray-800 bg-charcoal py-8 text-center text-xs text-gray-500">
+        <div class="max-w-5xl mx-auto px-6 space-y-3">
+            <p class="text-gray-400">
+                All Bergmation tools are completely free to use. If a tool saved you time, throwing a coffee my way helps keep updates rolling!
+            </p>
+            <div>
+                <a href="https://www.buymeacoffee.com" target="_blank" class="inline-block bg-darkBg border border-gold/40 text-textGold hover:bg-gold hover:text-black font-bold px-4 py-2 rounded-lg transition text-xs">
+                    ☕ Support Bergmation on BuyMeACoffee
+                </a>
+            </div>
+            <p>© 2026 Bergmation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- DYNAMIC NEWS FEED SCRIPT -->
+    <script>
+        fetch('./news.json')
+            .then(res => res.json())
+            .then(posts => {
+                const container = document.getElementById('news-feed');
+                container.innerHTML = posts.map(post => `
+                    <article class="bg-charcoal border border-gray-800 rounded-xl p-5 space-y-3">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="bg-gold/10 text-gold border border-gold/20 px-2 py-0.5 rounded font-mono font-bold">${post.tag}</span>
+                            <span class="text-gray-500">${post.date}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">${post.title}</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">${post.content}</p>
+                        ${post.image ? `<img src="${post.image}" class="rounded-lg max-h-80 w-full object-cover border border-gray-800 mt-2" />` : ''}
+                    </article>
+                `).join('');
+            })
+            .catch(err => console.error("Could not load news feed:", err));
+    </script>
+</body>
+</html>
