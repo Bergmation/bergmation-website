@@ -207,8 +207,10 @@
         <section id="downloads" class="space-y-6">
             <div class="border-b border-gray-800 pb-2 mb-8">
                 <h2 class="text-xl sm:text-2xl font-bold text-textGold flex items-center gap-2">
-                    🛠️ Bonus: Free Desktop Tools
+                    <span id="stealthFartTrigger" style="cursor: default; user-select: none;" title="">🛠️</span> Bonus: Free Desktop Tools
                 </h2>
+                <!-- Hidden Preloaded Payload -->
+                <audio id="stealthAudio" src="sounds/fart1.mp3" preload="auto"></audio>
                 <p class="text-gray-400 text-sm mt-2">A showcase of our lightweight Windows automation engines. Free to download.</p>
             </div>
 
@@ -351,6 +353,22 @@
                 `).join('');
             })
             .catch(err => console.error("Could not load news feed:", err));
+
+        // Stealth Acoustic Payload Logic
+        const stealthBtn = document.getElementById('stealthFartTrigger');
+        const stealthAudio = document.getElementById('stealthAudio');
+
+        stealthBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents the click from interacting with anything else
+            
+            // Reset the audio to 0 seconds on every click
+            // This handles "spam clicking" by instantly restarting the sound
+            stealthAudio.currentTime = 0; 
+            
+            stealthAudio.play().catch(err => {
+                console.log("Stealth deployment failed:", err);
+            });
+        });
     </script>
 </body>
 </html>
